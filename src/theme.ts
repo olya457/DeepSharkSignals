@@ -15,12 +15,12 @@ export const colors = {
 
 export function useScreenMetrics() {
   const {width, height} = useWindowDimensions();
-  const compact = height < 740 || width < 370;
+  const compact = height < 740 || width < 380;
   const gutter = compact ? 14 : 18;
-  const top = Platform.OS === 'android' ? 30 : compact ? 44 : 72;
+  const top = Platform.OS === 'android' ? 30 : compact ? 38 : 72;
   const bottom = Platform.OS === 'android' ? 30 : 20;
-  const headerHeight = compact ? 62 : 74;
-  const navHeight = compact ? 62 : 68;
+  const headerHeight = compact ? 54 : 74;
+  const navHeight = compact ? 58 : 68;
   const navWidth = Math.min(width - gutter * 4, compact ? 304 : 320);
 
   return {

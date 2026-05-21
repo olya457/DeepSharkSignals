@@ -24,6 +24,7 @@ export function FloatingTabBar({active, onChange}: Props): React.JSX.Element {
     <View
       style={[
         styles.wrap,
+        metrics.compact && styles.wrapCompact,
         {
           bottom: metrics.bottom,
           height: metrics.navHeight,
@@ -41,10 +42,16 @@ export function FloatingTabBar({active, onChange}: Props): React.JSX.Element {
             onPress={() => onChange(tab.id)}
             style={({pressed}) => [
               styles.item,
+              metrics.compact && styles.itemCompact,
               selected && styles.active,
               pressed && styles.pressed,
             ]}>
-            <Text style={[styles.icon, selected && styles.activeIcon]}>
+            <Text
+              style={[
+                styles.icon,
+                metrics.compact && styles.iconCompact,
+                selected && styles.activeIcon,
+              ]}>
               {tab.icon}
             </Text>
           </Pressable>
@@ -73,6 +80,9 @@ const styles = StyleSheet.create({
     elevation: 18,
     zIndex: 20,
   },
+  wrapCompact: {
+    borderRadius: 20,
+  },
   item: {
     alignItems: 'center',
     borderColor: 'transparent',
@@ -82,6 +92,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 46,
   },
+  itemCompact: {
+    borderRadius: 15,
+    height: 42,
+    width: 42,
+  },
   active: {
     backgroundColor: 'rgba(255, 255, 255, 0.16)',
     borderColor: 'rgba(255, 255, 255, 0.26)',
@@ -89,6 +104,9 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 22,
     opacity: 0.62,
+  },
+  iconCompact: {
+    fontSize: 20,
   },
   activeIcon: {
     opacity: 1,
