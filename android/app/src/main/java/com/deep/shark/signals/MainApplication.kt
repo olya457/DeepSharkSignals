@@ -1,4 +1,4 @@
-package com.deepsharksignals
+package com.deep.shark.signals
 
 import android.app.Application
 import com.facebook.react.PackageList

@@ -10,7 +10,7 @@ import {
 import MapView, {
   MAP_TYPES,
   Marker,
-  UrlTile,
+  PROVIDER_GOOGLE,
   type Region,
 } from 'react-native-maps';
 import {Images} from '../assets';
@@ -115,21 +115,14 @@ export function MapScreen({onOpenLocation}: Props): React.JSX.Element {
             ref={mapRef}
             style={styles.map}
             customMapStyle={mapStyle}
-            mapType={
-              Platform.OS === 'android' ? MAP_TYPES.NONE : MAP_TYPES.STANDARD
-            }
+            mapType={MAP_TYPES.STANDARD}
+            provider={Platform.OS === 'android' ? PROVIDER_GOOGLE : undefined}
             toolbarEnabled={false}
             showsCompass={false}
             showsUserLocation={false}
             initialRegion={initialRegion}
             onRegionChangeComplete={setRegion}
             onPress={() => setSelectedId(null)}>
-            {Platform.OS === 'android' && (
-              <UrlTile
-                urlTemplate="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                maximumZ={17}
-              />
-            )}
             {locations.map(location => (
               <Marker
                 key={location.id}

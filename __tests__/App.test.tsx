@@ -23,7 +23,7 @@ jest.mock('react-native-maps', () => {
     default: View,
     MAP_TYPES: {NONE: 'none', STANDARD: 'standard'},
     Marker: View,
-    UrlTile: View,
+    PROVIDER_GOOGLE: 'google',
   };
 });
 

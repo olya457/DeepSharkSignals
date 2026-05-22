@@ -1,4 +1,4 @@
-package com.deepsharksignals
+package com.deep.shark.signals
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
