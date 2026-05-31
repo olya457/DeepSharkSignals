@@ -1,11 +1,11 @@
 import {Platform, useWindowDimensions} from 'react-native';
 
 export const colors = {
-  panel: 'rgba(0, 35, 68, 0.94)',
+  panel: 'rgba(17, 123, 222, 0.94)',
   panelDeep: 'rgba(0, 22, 43, 0.96)',
   border: 'rgba(173, 218, 255, 0.36)',
   text: '#ffffff',
-  muted: 'rgba(232, 244, 255, 0.72)',
+  muted: 'rgba(244, 244, 245, 0.72)',
   green: '#15ff35',
   greenDark: '#119a46',
   red: '#ff2525',

@@ -1,4 +1,4 @@
-package com.deep.shark.signals
+package com.sharkoceanquest
 
 import android.app.Application
 import com.facebook.react.PackageList
